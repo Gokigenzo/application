@@ -111,10 +111,9 @@ def inject_premium_css() -> None:
             padding: 15px 20px;
         }
     </style>
-    """,
-    unsafe_allow_html=True
-)
-st.markdown(premium_css, unsafe_allow_html=True)
+    """
+    st.markdown(premium_css, unsafe_allow_html=True)
+
 
 def draw_header_with_badge(title: str, is_active: bool = False, badge_text: str = "") -> None:
     """Draws a premium header page layout containing a glowing status indicator."""
