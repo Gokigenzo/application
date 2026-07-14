@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: deployment/Dockerfile
+    container_name: face_attendance_system
+    restart: always
+    ports:
+      - "8501:8501"
+    env_file:
+      - ../.env
+    volumes:
+      - ../logs:/app/logs
+      # Cache downloaded InsightFace model files on the host machine
+      - ~/.insightface:/root/.insightface
